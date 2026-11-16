@@ -24,6 +24,8 @@ A full-stack SaaS task management application built with Next.js and Supabase, f
 - Google OAuth and email authentication
 - Premium subscription with Stripe integration
 - Usage limits and tracking
+- Steps (subtasks) for each task, stored in their own table
+- AI-suggested steps: OpenAI breaks a task into steps
 
 ## Tech Stack
 
@@ -90,6 +92,7 @@ supabase db push
 supabase functions deploy create-task-with-ai
 supabase functions deploy create-stripe-session
 supabase functions deploy stripe-webhook
+supabase functions deploy suggest-subtasks --no-verify-jwt
 ```
 
 4. Disable `Enforce JWT Verification` ( **Edge Functions > stripe-webhook > Details > Enforce JWT Verification**) for your Stripe webhook Edge Function.
