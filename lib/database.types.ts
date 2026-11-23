@@ -39,48 +39,6 @@ export type Database = {
         }
         Relationships: []
       }
-      subtasks: {
-        Row: {
-          completed: boolean
-          created_at: string | null
-          subtask_id: string
-          task_id: string
-          title: string
-          user_id: string
-        }
-        Insert: {
-          completed?: boolean
-          created_at?: string | null
-          subtask_id?: string
-          task_id: string
-          title: string
-          user_id: string
-        }
-        Update: {
-          completed?: boolean
-          created_at?: string | null
-          subtask_id?: string
-          task_id?: string
-          title?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "subtasks_task_id_fkey"
-            columns: ["task_id"]
-            isOneToOne: false
-            referencedRelation: "tasks"
-            referencedColumns: ["task_id"]
-          },
-          {
-            foreignKeyName: "subtasks_user_id_fkey"
-            columns: ["user_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["user_id"]
-          },
-        ]
-      }
       tasks: {
         Row: {
           completed: boolean | null

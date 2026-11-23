@@ -38,7 +38,6 @@ import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/components/hooks/use-toast";
 import Image from "next/image";
 import { useDropzone } from "react-dropzone";
-import SubtaskList from "@/components/SubtaskList";
 
 function TaskForm() {
   const params = useSearchParams();
@@ -256,10 +255,6 @@ function TaskForm() {
               />
             </PopoverContent>
           </Popover>
-        </div>
-        <div className="grid w-full items-center gap-1.5">
-          <Label>Steps</Label>
-          <SubtaskList taskId={taskId} />
         </div>
         <div className="grid w-full items-center gap-1.5">
           <Label>Attach Image</Label>

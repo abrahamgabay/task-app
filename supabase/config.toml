@@ -261,11 +261,6 @@ inspector_port = 8083
 [functions.stripe-webhook]
 verify_jwt = false
 
-# With the project's new API keys, Supabase's own check of the login token rejects
-# valid requests ("Invalid JWT"). The function checks the user's login itself.
-[functions.suggest-subtasks]
-verify_jwt = false
-
 [analytics]
 enabled = true
 port = 54327
